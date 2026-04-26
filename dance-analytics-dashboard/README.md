@@ -2,6 +2,8 @@
 
 Multi-linked **Plotly Dash** dashboard for exploring a global dance-styles dataset: parallel coordinates, Sankey flow, geo bubbles, and time-period small multiples. Built as a small, installable Python package with health checks and environment-based configuration.
 
+**Live demo:** [ishelar-dance-analytics.hf.space](https://ishelar-dance-analytics.hf.space/) · **Space:** [huggingface.co/spaces/ishelar/dance-analytics](https://huggingface.co/spaces/ishelar/dance-analytics)
+
 ## Problem
 
 Researchers and enthusiasts comparing traditions need **linked views** (filter in one chart, see the effect elsewhere) without juggling separate tools. This app wires PCP brushing and Sankey clicks into consistent cohorts and map context.
@@ -24,7 +26,7 @@ Researchers and enthusiasts comparing traditions need **linked views** (filter i
 
 ## Quick start (local)
 
-From this directory (`Assignment/A3/`):
+From this directory (`dance-analytics-dashboard/`):
 
 ```bash
 python3.11 -m venv .venv
@@ -65,10 +67,22 @@ After `pip install -e .` from this directory:
 gunicorn "dance_analytics.main:server" -b 0.0.0.0:8051 --workers 2
 ```
 
+## Run with Docker
+
+```bash
+docker build -t dance-analytics .
+docker run -p 7860:7860 dance-analytics
+# open http://127.0.0.1:7860
+```
+
+The same `Dockerfile` is what powers the live Hugging Face Space — non-root `uid 1000`, port `7860`, gunicorn (2 workers), `HEALTHCHECK` on `/health`.
+
 ## Project layout
 
 ```text
-Assignment/A3/
+dance-analytics-dashboard/
+  Dockerfile             # Hugging Face / generic container build
+  .dockerignore
   pyproject.toml
   README.md
   .env.example
@@ -96,9 +110,9 @@ Assignment/A3/
 ## Roadmap
 
 - Row-level schema validation (e.g. pydantic or pandera)
-- Docker image + compose for one-command demos
 - Precomputed aggregates for very large CSVs
 - Centroids from a maintained geo dataset instead of static JSON
+- CI: build the Docker image on every push and smoke-test `/ready` before deploy
 
 ## License
 
