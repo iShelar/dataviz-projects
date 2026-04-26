@@ -1,0 +1,28 @@
+**/__pycache__
+**/*.pyc
+**/*.pyo
+**/.pytest_cache
+**/.ruff_cache
+**/*.egg-info
+
+.venv
+venv
+env
+
+build
+dist
+
+.env
+.env.*
+
+tests/
+.git
+.gitignore
+.dockerignore
+
+# Heroku / Render only
+runtime.txt
+
+# These end up in the HF Space README override; not needed in the image
+README.md
+LICENSE
