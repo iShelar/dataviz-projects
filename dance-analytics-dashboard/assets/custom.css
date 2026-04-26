@@ -1,0 +1,106 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 10px;
+    overflow: hidden;
+}
+
+.a4-container {
+    max-width: 1400px;
+    height: calc(100vh - 20px);
+    margin: 0 auto;
+    background: white;
+    padding: 15px;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.chart-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 12px;
+    height: calc(100vh - 50px);
+    width: 100%;
+}
+
+.chart-card {
+    background: #f7fafc;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.chart-card h2 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #2d3748;
+    margin-bottom: 6px;
+    padding-left: 8px;
+    border-left: 3px solid #667eea;
+    flex-shrink: 0;
+}
+
+.chart-wrapper {
+    flex: 1;
+    min-height: 0;
+    overflow: hidden;
+}
+
+@media print {
+    @page {
+        size: A4 landscape;
+        margin: 8mm;
+    }
+
+    body {
+        background: white;
+        padding: 0;
+        overflow: visible;
+    }
+
+    .a4-container {
+        max-width: 100%;
+        width: 281mm;
+        height: 190mm;
+        padding: 6mm;
+        box-shadow: none;
+        border-radius: 0;
+        page-break-after: avoid;
+    }
+
+    .chart-grid {
+        gap: 6px;
+        height: 178mm;
+    }
+
+    .chart-card {
+        padding: 6px;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        page-break-inside: avoid;
+        break-inside: avoid;
+    }
+
+    .chart-card h2 {
+        font-size: 0.9rem;
+        margin-bottom: 4px;
+    }
+
+    .js-plotly-plot {
+        width: 100% !important;
+    }
+
+    .js-plotly-plot .plotly {
+        width: 100% !important;
+    }
+}
