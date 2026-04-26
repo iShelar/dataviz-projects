@@ -2,10 +2,12 @@
 
 Three self-contained visualisation projects.
 
-| Project | Type | Stack | Live demo path |
-|---------|------|-------|----------------|
-| [`dance-analytics-dashboard/`](dance-analytics-dashboard/) | Multi-view interactive dashboard | Python · Plotly Dash · Pandas | hosted Python service (Render / Hugging Face Spaces) |
-| [`minard-d3-visualizations/`](minard-d3-visualizations/) | Browser-only D3 charts (Minard scatter + Gapminder iterations) | HTML · D3 v7 | static hosting (GitHub Pages) |
+**Live site:** https://ishelar.github.io/dataviz-projects/
+
+| Project | Type | Stack | Live demo |
+|---------|------|-------|-----------|
+| [`dance-analytics-dashboard/`](dance-analytics-dashboard/) | Multi-view interactive dashboard | Python · Plotly Dash · Pandas | run locally (Python service) — see project README |
+| [`minard-d3-visualizations/`](minard-d3-visualizations/) | Browser-only D3 charts (Minard scatter + Gapminder iterations) | HTML · D3 v7 | [Minard scatter](https://ishelar.github.io/dataviz-projects/minard-d3-visualizations/minard-scatter/minard-scatter.html) · [Gapminder I](https://ishelar.github.io/dataviz-projects/minard-d3-visualizations/gapminder/First/gapminder.html) · [Gapminder II](https://ishelar.github.io/dataviz-projects/minard-d3-visualizations/gapminder/Second/gapminder.html) · [Gapminder III](https://ishelar.github.io/dataviz-projects/minard-d3-visualizations/gapminder/Third/gapminder.html) |
 | [`visualisation-analysis/`](visualisation-analysis/) | Critique of three published visualisations and a design proposal | Markdown + images | viewable on GitHub |
 
 ## Overview
